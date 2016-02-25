@@ -28,6 +28,6 @@ init(Name n: String,Location l: String,NumberOfStudents ns: String,Image i: UIIm
         name = ""
         location = ""
         numberOfStudents = ""
-        image = UIImage(named: "")!
+        image = UIImage()
     }
 }

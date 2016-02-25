@@ -42,5 +42,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let NVC = segue.destinationViewController as! DetailViewController
         let currentRow = myTableView.indexPathForSelectedRow?.row
-}
+        NVC.collegeDetailViewController = collegeArray[currentRow!]
+    }
 
+}

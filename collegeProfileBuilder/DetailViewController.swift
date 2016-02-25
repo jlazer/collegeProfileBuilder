@@ -22,7 +22,14 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        print(collegeDetailViewController.name)
+        print(collegeDetailViewController.location)
+        print(collegeDetailViewController.numberOfStudents)
+        print(collegeDetailViewController.image)
+        collegeImageView.image = collegeDetailViewController.image
+        label1.text = collegeDetailViewController.name
+        label2.text = collegeDetailViewController.location
+        label3.text = collegeDetailViewController.numberOfStudents
     }
 
    
