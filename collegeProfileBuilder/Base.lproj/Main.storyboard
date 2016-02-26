@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--College Profile Builder-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="collegeProfileBuilder" customModuleProvider="target" sceneMemberID="viewController">
@@ -41,7 +41,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="MKv-iA-ZYv"/>
+                    <navigationItem key="navigationItem" title="College Profile Builder" id="MKv-iA-ZYv"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
                         <outlet property="myTableView" destination="NCX-oV-A8v" id="re9-pP-xRg"/>
@@ -131,7 +131,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NQn-cz-YTR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="172" y="113"/>
+            <point key="canvasLocation" x="202" y="349"/>
         </scene>
     </scenes>
 </document>
