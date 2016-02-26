@@ -13,10 +13,9 @@ class DetailViewController: UIViewController {
     var collegeDetailViewController = College()
     
     @IBOutlet weak var collegeImageView: UIImageView!
-    @IBOutlet weak var label1: UILabel!
-    @IBOutlet weak var label2: UILabel!
-    @IBOutlet weak var label3: UILabel!
-    
+    @IBOutlet weak var nameTextfield: UITextField!
+    @IBOutlet weak var locationTextfield: UITextField!
+    @IBOutlet weak var numberOfStudentsTextfield: UITextField!
     
 
     override func viewDidLoad() {
@@ -27,9 +26,9 @@ class DetailViewController: UIViewController {
         print(collegeDetailViewController.numberOfStudents)
         print(collegeDetailViewController.image)
         collegeImageView.image = collegeDetailViewController.image
-        label1.text = collegeDetailViewController.name
-        label2.text = collegeDetailViewController.location
-        label3.text = collegeDetailViewController.numberOfStudents
+        nameTextfield.text = collegeDetailViewController.name
+        locationTextfield.text = collegeDetailViewController.location
+        numberOfStudentsTextfield.text = collegeDetailViewController.numberOfStudents
     }
 
    
