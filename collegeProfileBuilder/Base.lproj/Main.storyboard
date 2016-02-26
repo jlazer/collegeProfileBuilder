@@ -57,7 +57,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="College Profile Builder" id="MKv-iA-ZYv"/>
+                    <navigationItem key="navigationItem" title="College Profile Builder" id="MKv-iA-ZYv">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="hUl-6b-AXf"/>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
                         <outlet property="myTableView" destination="NCX-oV-A8v" id="re9-pP-xRg"/>
