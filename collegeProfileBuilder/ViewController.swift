@@ -31,6 +31,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let currentCell = tableView.dequeueReusableCellWithIdentifier("myCell")!
         let currentCollege = collegeArray[indexPath.row]
         currentCell.textLabel!.text = currentCollege.name
+        currentCell.detailTextLabel?.text = currentCollege.location
+        
         return currentCell
     }
     
