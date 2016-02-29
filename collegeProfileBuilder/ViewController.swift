@@ -27,6 +27,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     }
     
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let currentCell = tableView.dequeueReusableCellWithIdentifier("myCell")!
         let currentCollege = collegeArray[indexPath.row]
@@ -40,6 +41,45 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return collegeArray.count
         
     }
+    
+    @IBAction func addCollegeBarButton(sender: UIBarButtonItem) {
+        //1. Create the alert controller.
+        let alert = UIAlertController(title: "Add A college", message: "Please fill in the parameters", preferredStyle: .Alert)
+        //2. Add the text field. You can configure it however you need.
+        alert.addTextFieldWithConfigurationHandler({ (name) -> Void in
+            name.text = "Name Of College"
+        })
+        alert.addTextFieldWithConfigurationHandler({ (location) -> Void in
+        location.text = "Location"
+        })
+        alert.addTextFieldWithConfigurationHandler({ (numberOfStudents) -> Void in
+            numberOfStudents.text = "Number of students"
+        })
+        
+        //3. Grab the value from the text field, and print it when the user clicks OK.
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
+            let name = alert.textFields![0] as UITextField
+            let location = alert.textFields![1] as UITextField
+            let numberOfStudents = alet.textFields![2] as UITextField
+            //Placing the contents of the two textfields into the a buffer.
+            
+            var currentCollege = alertTextFieldContents()
+            currentCollege.name = name.text!
+            currentCollege.location = location.text!
+            currentCollege.numberOfStudents = numberOfStudents.text!
+            self.collegeArray.append(currentCollege)
+            self.myTableView.reloadData()
+            //Printing the contents into the console so that you can see if they are recieving the text from the UITextField.
+            print("Name: \(currentCollege.name)")
+            print("Location: \(currentCollege.location)")
+            print("Number of studnets: \(currentCollege.numberOfStudents)")
+        }))
+        // 4. Present the alert.
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+    }
+    
+    
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let NVC = segue.destinationViewController as! DetailViewController
