@@ -60,19 +60,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
             let name = alert.textFields![0] as UITextField
             let location = alert.textFields![1] as UITextField
-            let numberOfStudents = alet.textFields![2] as UITextField
+            let numberOfStudents = alert.textFields![2] as UITextField
             //Placing the contents of the two textfields into the a buffer.
             
-            var currentCollege = alertTextFieldContents()
-            currentCollege.name = name.text!
-            currentCollege.location = location.text!
-            currentCollege.numberOfStudents = numberOfStudents.text!
-            self.collegeArray.append(currentCollege)
+            var currentCollege1 = College()
+            currentCollege1.name = name.text!
+            currentCollege1.location = location.text!
+            currentCollege1.numberOfStudents = numberOfStudents.text!
+            self.collegeArray.append(currentCollege1)
             self.myTableView.reloadData()
             //Printing the contents into the console so that you can see if they are recieving the text from the UITextField.
-            print("Name: \(currentCollege.name)")
-            print("Location: \(currentCollege.location)")
-            print("Number of studnets: \(currentCollege.numberOfStudents)")
+            print("Name: \(currentCollege1.name)")
+            print("Location: \(currentCollege1.location)")
+            print("Number of studnets: \(currentCollege1.numberOfStudents)")
         }))
         // 4. Present the alert.
         self.presentViewController(alert, animated: true, completion: nil)
