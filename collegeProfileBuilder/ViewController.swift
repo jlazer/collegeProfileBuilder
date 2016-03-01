@@ -24,6 +24,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         collegeArray.append(college1)
         collegeArray.append(college2)
         collegeArray.append(college3)
+        
     
     }
     
@@ -32,6 +33,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let currentCell = tableView.dequeueReusableCellWithIdentifier("myCell")!
         let currentCollege = collegeArray[indexPath.row]
         currentCell.textLabel!.text = currentCollege.name
+        //STRETCH 1
         currentCell.detailTextLabel?.text = currentCollege.location
         
         return currentCell
@@ -41,7 +43,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return collegeArray.count
         
     }
+    //stretch 3
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete{
+            collegeArray.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        }
+    }
     
+    // STRETCH 2
     @IBAction func addCollegeBarButton(sender: UIBarButtonItem) {
         //1. Create the alert controller.
         let alert = UIAlertController(title: "Add A college", message: "Please fill in the parameters", preferredStyle: .Alert)
@@ -55,14 +65,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         alert.addTextFieldWithConfigurationHandler({ (numberOfStudents) -> Void in
             numberOfStudents.text = "Number of students"
         })
-        
         //3. Grab the value from the text field, and print it when the user clicks OK.
         alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
             let name = alert.textFields![0] as UITextField
             let location = alert.textFields![1] as UITextField
             let numberOfStudents = alert.textFields![2] as UITextField
             //Placing the contents of the two textfields into the a buffer.
-            
             var currentCollege1 = College()
             currentCollege1.name = name.text!
             currentCollege1.location = location.text!
@@ -76,8 +84,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }))
         // 4. Present the alert.
         self.presentViewController(alert, animated: true, completion: nil)
+    }
+    //END OF STRETCH 2
+    
+    //STRETCH 3
+    @IBAction func editCollegeBarButton(sender: UIBarButtonItem) {
+    self.navigationItem.leftBarButtonItem = self.editButtonItem()
+        self.myTableView.editing = true
         
     }
+    //END OF STRETCH 3
+    
     
     
 

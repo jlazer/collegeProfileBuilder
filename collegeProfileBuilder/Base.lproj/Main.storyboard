@@ -67,6 +67,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="College Profile Builder" id="MKv-iA-ZYv">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="YcK-Q8-YLv">
+                            <connections>
+                                <action selector="editCollegeBarButton:" destination="BYZ-38-t0r" id="9JR-H9-dh8"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="hUl-6b-AXf">
                             <connections>
                                 <action selector="addCollegeBarButton:" destination="BYZ-38-t0r" id="wnp-bk-8Fg"/>
