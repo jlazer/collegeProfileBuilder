@@ -89,9 +89,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     //STRETCH 3
     @IBAction func editCollegeBarButton(sender: UIBarButtonItem) {
-    self.navigationItem.leftBarButtonItem = self.editButtonItem()
-        self.myTableView.editing = true
+    //self.navigationItem.leftBarButtonItem = self.editButtonItem()
+        //self.myTableView.editing = true
         
+        if self.myTableView.editing
+        {
+            self.myTableView.editing = false
+        }
+        else
+        {
+            self.myTableView.editing = true
+        }
     }
     //END OF STRETCH 3
     
