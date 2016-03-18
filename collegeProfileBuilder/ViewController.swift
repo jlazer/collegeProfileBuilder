@@ -18,9 +18,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let college1 = College(Name: "Cal Poly Pomona", Location: "Pomona, CA", NumberOfStudents: "23,717", Image: image1!)
-        let college2 = College(Name: "University Of California Santa Barbara", Location: "Isla Vista, CA", NumberOfStudents: "23,051", Image: image2!)
-        let college3 = College(Name: "University Of California San Diego", Location: "La Jolla, CA", NumberOfStudents: "31,502", Image: image3!)
+        let college1 = College(Name: "Cal Poly Pomona", Location: "Pomona, CA", NumberOfStudents: "23,717", Image: image1!,Webpage: NSURL(string: "http://www.cpp.edu")!)
+        let college2 = College(Name: "University Of California Santa Barbara", Location: "Isla Vista, CA", NumberOfStudents: "23,051", Image: image2!, Webpage: NSURL(string: "http://www.ucsb.edu/")!)
+        let college3 = College(Name: "University Of California San Diego", Location: "La Jolla, CA", NumberOfStudents: "31,502", Image: image3!, Webpage: NSURL(string: "https://ucsd.edu/")!)
         collegeArray.append(college1)
         collegeArray.append(college2)
         collegeArray.append(college3)
@@ -43,7 +43,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return collegeArray.count
         
     }
-    //stretch 3
+    //STRETCH 3
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete{
             collegeArray.removeAtIndex(indexPath.row)
@@ -95,6 +95,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if self.myTableView.editing
         {
             self.myTableView.editing = false
+            
         }
         else
         {

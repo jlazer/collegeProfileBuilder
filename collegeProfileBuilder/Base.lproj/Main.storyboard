@@ -87,9 +87,37 @@
             </objects>
             <point key="canvasLocation" x="1117" y="349"/>
         </scene>
+        <!--Webpage View Controller-->
+        <scene sceneID="Xm7-No-JbV">
+            <objects>
+                <viewController id="u6F-rc-uNj" customClass="webpageViewController" customModule="collegeProfileBuilder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Zkt-95-E1b"/>
+                        <viewControllerLayoutGuide type="bottom" id="che-2J-ev3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lef-E9-HnI" customClass="UIWindow">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem title="Dismiss" id="Eza-gc-dOu">
+                            <connections>
+                                <action selector="dismissOnTap:" destination="u6F-rc-uNj" id="PVo-em-OC5"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ckh-IS-Fx2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2001" y="-727"/>
+        </scene>
         <!--Detail View Controller-->
         <scene sceneID="kcX-26-uTm">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tsK-h7-3bk" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="WAi-Rw-MYx" customClass="DetailViewController" customModule="collegeProfileBuilder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ejD-HR-vqx"/>
@@ -104,11 +132,6 @@
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ubE-Zf-XF8">
                                 <rect key="frame" x="284" y="426" width="200" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sM5-p6-pHA">
-                                <rect key="frame" x="284" y="493" width="200" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -135,6 +158,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sM5-p6-pHA">
+                                <rect key="frame" x="284" y="493" width="200" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nea-oB-ja7">
+                                <rect key="frame" x="361" y="531" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="u6F-rc-uNj" kind="presentation" id="d0d-yF-xpw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -146,7 +181,6 @@
                         <outlet property="numberOfStudentsTextfield" destination="sM5-p6-pHA" id="WsH-H6-T7n"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tsK-h7-3bk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2001" y="349"/>
         </scene>
