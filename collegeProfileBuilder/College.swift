@@ -15,16 +15,16 @@ class College
     var numberOfStudents: String
     var image: UIImage
     var webpage: NSURL
-
-
+    
+    
     init(Name n: String,Location l: String,NumberOfStudents ns: String,Image i: UIImage,Webpage w: NSURL)
-{
-    name = n
-    location = l
-    numberOfStudents = ns
-    image = i
-    webpage = w
-}
+    {
+        name = n
+        location = l
+        numberOfStudents = ns
+        image = i
+        webpage = w
+    }
     init()
     {
         name = ""

@@ -30,6 +30,9 @@ class DetailViewController: UIViewController {
         locationTextfield.text = collegeDetailViewController.location
         numberOfStudentsTextfield.text = collegeDetailViewController.numberOfStudents
     }
-
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let NVC = segue.destinationViewController as! webpageViewController
+        NVC.collegeInWebViewController = collegeDetailViewController
+    }
    
 }

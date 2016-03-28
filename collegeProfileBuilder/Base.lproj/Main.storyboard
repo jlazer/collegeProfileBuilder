@@ -98,6 +98,12 @@
                     <view key="view" contentMode="scaleToFill" id="lef-E9-HnI" customClass="UIWindow">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pKk-Ts-FZ7">
+                                <rect key="frame" x="264" y="237" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems>
@@ -109,6 +115,9 @@
                     </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <outlet property="myWebView" destination="pKk-Ts-FZ7" id="3ez-BJ-x55"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ckh-IS-Fx2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -117,7 +126,6 @@
         <!--Detail View Controller-->
         <scene sceneID="kcX-26-uTm">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tsK-h7-3bk" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="WAi-Rw-MYx" customClass="DetailViewController" customModule="collegeProfileBuilder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ejD-HR-vqx"/>
@@ -181,6 +189,7 @@
                         <outlet property="numberOfStudentsTextfield" destination="sM5-p6-pHA" id="WsH-H6-T7n"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tsK-h7-3bk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2001" y="349"/>
         </scene>

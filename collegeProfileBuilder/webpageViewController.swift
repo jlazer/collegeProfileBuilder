@@ -10,10 +10,13 @@ import UIKit
 
 class webpageViewController: UIViewController {
 
+    @IBOutlet weak var myWebView: UIWebView!
+    var collegeInWebViewController = College()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        var request = NSURLRequest(currentCollege.webpage)
-        
+        var request = NSURLRequest(URL: collegeInWebViewController.webpage)
+        myWebView.loadRequest(request)
     }
 
    
