@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     @IBOutlet weak var myTableView: UITableView!
     var collegeArray: [College] = [College]()
     var image1 = UIImage(named: "CPP_Logo")
@@ -25,7 +25,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         collegeArray.append(college2)
         collegeArray.append(college3)
         
-    
+        
     }
     
     
@@ -60,21 +60,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             name.text = "Name Of College"
         })
         alert.addTextFieldWithConfigurationHandler({ (location) -> Void in
-        location.text = "Location"
+            location.text = "Location"
         })
         alert.addTextFieldWithConfigurationHandler({ (numberOfStudents) -> Void in
             numberOfStudents.text = "Number of students"
+        })
+        alert.addTextFieldWithConfigurationHandler({ (webpage) -> Void in
+            webpage.text = "Webpage"
         })
         //3. Grab the value from the text field, and print it when the user clicks OK.
         alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
             let name = alert.textFields![0] as UITextField
             let location = alert.textFields![1] as UITextField
             let numberOfStudents = alert.textFields![2] as UITextField
-            //Placing the contents of the two textfields into the a buffer.
+            let webpage = alert.textFields![3] as UITextField
+            //Placing the contents of the textfields into the a buffer.
             var currentCollege1 = College()
             currentCollege1.name = name.text!
             currentCollege1.location = location.text!
             currentCollege1.numberOfStudents = numberOfStudents.text!
+            let webpageConversion: NSURL = NSURL(string: webpage.text!)!
+            currentCollege1.webpage = webpageConversion
             self.collegeArray.append(currentCollege1)
             self.myTableView.reloadData()
             //Printing the contents into the console so that you can see if they are recieving the text from the UITextField.
@@ -89,7 +95,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     //STRETCH 3
     @IBAction func editCollegeBarButton(sender: UIBarButtonItem) {
-    //self.navigationItem.leftBarButtonItem = self.editButtonItem()
+        //self.navigationItem.leftBarButtonItem = self.editButtonItem()
         //self.myTableView.editing = true
         
         if self.myTableView.editing
@@ -106,11 +112,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     
-
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let NVC = segue.destinationViewController as! DetailViewController
         let currentRow = myTableView.indexPathForSelectedRow?.row
         NVC.collegeDetailViewController = collegeArray[currentRow!]
     }
-
+    
 }
