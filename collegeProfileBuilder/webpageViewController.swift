@@ -19,10 +19,9 @@ class webpageViewController: UIViewController {
         myWebView.loadRequest(request)
     }
 
-   
-    @IBAction func dismissOnTap(sender: UIBarButtonItem) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-        
+    @IBAction func dismissOnTap(sender: UIButton) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
    
-}
+    
+  }

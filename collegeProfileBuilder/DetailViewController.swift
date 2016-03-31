@@ -16,6 +16,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var nameTextfield: UITextField!
     @IBOutlet weak var locationTextfield: UITextField!
     @IBOutlet weak var numberOfStudentsTextfield: UITextField!
+    @IBOutlet weak var websiteTextfield: UITextField!
     
 
     override func viewDidLoad() {
@@ -25,10 +26,13 @@ class DetailViewController: UIViewController {
         print(collegeDetailViewController.location)
         print(collegeDetailViewController.numberOfStudents)
         print(collegeDetailViewController.image)
+        print(collegeDetailViewController.webpage)
         collegeImageView.image = collegeDetailViewController.image
         nameTextfield.text = collegeDetailViewController.name
         locationTextfield.text = collegeDetailViewController.location
         numberOfStudentsTextfield.text = collegeDetailViewController.numberOfStudents
+        websiteTextfield.text = "\(collegeDetailViewController.webpage)"
+        
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let NVC = segue.destinationViewController as! webpageViewController

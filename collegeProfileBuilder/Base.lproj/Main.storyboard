@@ -58,12 +58,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NCX-oV-A8v" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="JcJ-sN-qHe"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="NCX-oV-A8v" secondAttribute="trailing" constant="-20" id="KYo-JD-ktE"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NCX-oV-A8v" secondAttribute="bottom" id="VRS-qu-Rlw"/>
-                            <constraint firstItem="NCX-oV-A8v" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="o0l-Dv-QIq"/>
-                            <constraint firstItem="NCX-oV-A8v" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="o1G-QX-rht"/>
-                            <constraint firstItem="NCX-oV-A8v" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ofp-nD-YyX"/>
+                            <constraint firstItem="NCX-oV-A8v" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="2wO-ar-shY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NCX-oV-A8v" secondAttribute="trailing" constant="-20" id="4tN-IX-j9e"/>
+                            <constraint firstItem="NCX-oV-A8v" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="AnD-sv-SVc"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NCX-oV-A8v" secondAttribute="bottom" id="GrB-CK-jjd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="College Profile Builder" id="MKv-iA-ZYv">
@@ -88,45 +86,60 @@
             <point key="canvasLocation" x="1117" y="349"/>
         </scene>
         <!--Webpage View Controller-->
-        <scene sceneID="Xm7-No-JbV">
+        <scene sceneID="AWG-7J-v10">
             <objects>
-                <viewController id="u6F-rc-uNj" customClass="webpageViewController" customModule="collegeProfileBuilder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vt4-ju-nDe" customClass="webpageViewController" customModule="collegeProfileBuilder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Zkt-95-E1b"/>
-                        <viewControllerLayoutGuide type="bottom" id="che-2J-ev3"/>
+                        <viewControllerLayoutGuide type="top" id="a4d-16-tpR"/>
+                        <viewControllerLayoutGuide type="bottom" id="CzA-4A-0B2"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="lef-E9-HnI" customClass="UIWindow">
+                    <view key="view" contentMode="scaleToFill" id="IPf-Il-8fV">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pKk-Ts-FZ7">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="964"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jnN-rk-eLn">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="s7N-o7-tTL"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem id="vBF-0t-PwE">
+                                        <nil key="title"/>
+                                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="SAR-JG-JNR">
+                                            <rect key="frame" x="231" y="7" width="307" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Dismiss"/>
+                                            <connections>
+                                                <action selector="dismissOnTap:" destination="vt4-ju-nDe" eventType="touchUpInside" id="Pd2-Z2-Iap"/>
+                                            </connections>
+                                        </button>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Le5-vc-VEV">
+                                <rect key="frame" x="0.0" y="44" width="768" height="980"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="pKk-Ts-FZ7" firstAttribute="top" secondItem="lef-E9-HnI" secondAttribute="topMargin" id="DXT-pc-DYn"/>
-                            <constraint firstItem="pKk-Ts-FZ7" firstAttribute="leading" secondItem="lef-E9-HnI" secondAttribute="leadingMargin" constant="-20" id="FDH-De-S5q"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pKk-Ts-FZ7" secondAttribute="trailing" constant="-20" id="L20-Pf-sCG"/>
+                            <constraint firstItem="Le5-vc-VEV" firstAttribute="top" secondItem="jnN-rk-eLn" secondAttribute="bottom" id="W1m-zv-2Cl"/>
+                            <constraint firstItem="jnN-rk-eLn" firstAttribute="leading" secondItem="IPf-Il-8fV" secondAttribute="leadingMargin" constant="-20" id="XyB-7d-tu2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Le5-vc-VEV" secondAttribute="trailing" constant="-20" id="b7a-9n-xEf"/>
+                            <constraint firstItem="jnN-rk-eLn" firstAttribute="top" secondItem="IPf-Il-8fV" secondAttribute="topMargin" id="eYo-Nt-BH4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jnN-rk-eLn" secondAttribute="trailing" constant="-20" id="mBt-NR-xFz"/>
+                            <constraint firstItem="CzA-4A-0B2" firstAttribute="top" secondItem="Le5-vc-VEV" secondAttribute="bottom" id="n01-sc-PTf"/>
+                            <constraint firstItem="Le5-vc-VEV" firstAttribute="leading" secondItem="IPf-Il-8fV" secondAttribute="leadingMargin" constant="-20" id="x9y-Kq-7Uf"/>
                         </constraints>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem title="Dismiss" id="Eza-gc-dOu">
-                            <connections>
-                                <action selector="dismissOnTap:" destination="u6F-rc-uNj" id="PVo-em-OC5"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
-                        <outlet property="myWebView" destination="pKk-Ts-FZ7" id="3ez-BJ-x55"/>
+                        <outlet property="myWebView" destination="Le5-vc-VEV" id="mOA-xE-TTd"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ckh-IS-Fx2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9H1-uf-lSH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2001" y="-727"/>
+            <point key="canvasLocation" x="2835" y="349"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="kcX-26-uTm">
@@ -177,12 +190,17 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nea-oB-ja7">
-                                <rect key="frame" x="361" y="531" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="357" y="531" width="56" height="30"/>
+                                <state key="normal" title="Website"/>
                                 <connections>
-                                    <segue destination="u6F-rc-uNj" kind="presentation" id="d0d-yF-xpw"/>
+                                    <segue destination="vt4-ju-nDe" kind="presentation" id="Wqz-jl-v8r"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ukY-8d-fW9">
+                                <rect key="frame" x="284" y="569" width="200" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -192,6 +210,7 @@
                         <outlet property="locationTextfield" destination="ubE-Zf-XF8" id="etc-B6-NzZ"/>
                         <outlet property="nameTextfield" destination="k70-pO-dvC" id="peS-Ee-fD4"/>
                         <outlet property="numberOfStudentsTextfield" destination="sM5-p6-pHA" id="WsH-H6-T7n"/>
+                        <outlet property="websiteTextfield" destination="ukY-8d-fW9" id="2hs-cb-CIc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tsK-h7-3bk" userLabel="First Responder" sceneMemberID="firstResponder"/>
