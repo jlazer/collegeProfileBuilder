@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UITextFieldDelegate {
     
     var collegeDetailViewController = College()
     
@@ -34,6 +34,13 @@ class DetailViewController: UIViewController {
         websiteTextfield.text = "\(collegeDetailViewController.webpage)"
         
     }
+
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        let webpageConversion: NSURL = NSURL(string: websiteTextfield.text!)!
+        collegeDetailViewController.webpage = webpageConversion
+        return true
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let NVC = segue.destinationViewController as! webpageViewController
         NVC.collegeInWebViewController = collegeDetailViewController
