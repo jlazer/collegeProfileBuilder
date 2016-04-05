@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, UITextFieldDelegate {
+class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate {
     
     var collegeDetailViewController = College()
     
@@ -17,6 +17,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var locationTextfield: UITextField!
     @IBOutlet weak var numberOfStudentsTextfield: UITextField!
     @IBOutlet weak var websiteTextfield: UITextField!
+    var picker = UIImagePickerController()
     
 
     override func viewDidLoad() {
@@ -40,6 +41,17 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         collegeDetailViewController.webpage = webpageConversion
         return true
     }
+   
+    @IBAction func whenTappedPhotoLibrary(sender: UIButton) {
+        let sheet = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+        sheet.popoverPresentationController?.sourceView = self.view
+        sheet.popoverPresentationController?.sourceRect = CGRect(x: 0, y: self.view.frame.height, width: self.view.frame.width, height: 100)
+        let libraryButton = UIAlertAction(title: "PHOTO LIBRARY", style: .Default) {(action) -> Void in
+            self.picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            self.presentViewController(self.picker, animated: true, completion: nil)
+        
+    }
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let NVC = segue.destinationViewController as! webpageViewController
