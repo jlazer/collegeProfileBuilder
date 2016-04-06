@@ -43,7 +43,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     }
    
     @IBAction func whenTappedPhotoLibrary(sender: UIButton) {
-        let sheet = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+        let sheet = UIAlertController(title: "", message: "", preferredStyle: .ActionSheet)
         sheet.popoverPresentationController?.sourceView = self.view
         sheet.popoverPresentationController?.sourceRect = CGRect(x: 0, y: self.view.frame.height, width: self.view.frame.width, height: 100)
         let libraryButton = UIAlertAction(title: "PHOTO LIBRARY", style: .Default) {(action) -> Void in
@@ -51,7 +51,9 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
             self.presentViewController(self.picker, animated: true, completion: nil)
         
     }
-    
+        sheet.addAction(libraryButton)
+        self.presentViewController(sheet, animated: true, completion: nil)
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let NVC = segue.destinationViewController as! webpageViewController
