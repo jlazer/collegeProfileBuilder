@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate {
+class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var collegeDetailViewController = College()
     
@@ -18,7 +18,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     @IBOutlet weak var numberOfStudentsTextfield: UITextField!
     @IBOutlet weak var websiteTextfield: UITextField!
     var picker = UIImagePickerController()
-    
+    var collegePhoto = UIImage()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +33,9 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         locationTextfield.text = collegeDetailViewController.location
         numberOfStudentsTextfield.text = collegeDetailViewController.numberOfStudents
         websiteTextfield.text = "\(collegeDetailViewController.webpage)"
+        
+        picker.delegate = self
+        self.picker.allowsEditing = true
         
     }
 
@@ -54,6 +57,23 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         sheet.addAction(libraryButton)
         self.presentViewController(sheet, animated: true, completion: nil)
     }
+    
+    func  imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]){
+        picker.dismissViewControllerAnimated(true) { () -> Void in
+            self.collegePhoto = (info[UIImagePickerControllerEditedImage] as! UIImage)
+            self.collegeDetailViewController.image = self.collegePhoto
+            self.collegeImageView.image = self.collegePhoto
+            
+        }
+        
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        self.picker.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let NVC = segue.destinationViewController as! webpageViewController
