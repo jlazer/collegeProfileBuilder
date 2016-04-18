@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E737BA7D1C9C571D00B5AA30 /* webpageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E737BA7C1C9C571D00B5AA30 /* webpageViewController.swift */; };
+		E745214A1CC5287C00B53397 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74521491CC5287C00B53397 /* MapViewController.swift */; };
 		E7574CD61C7B693300C4E626 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7574CD51C7B693300C4E626 /* AppDelegate.swift */; };
 		E7574CD81C7B693300C4E626 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7574CD71C7B693300C4E626 /* ViewController.swift */; };
 		E7574CDB1C7B693300C4E626 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7574CD91C7B693300C4E626 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		E737BA7C1C9C571D00B5AA30 /* webpageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = webpageViewController.swift; sourceTree = "<group>"; };
+		E74521491CC5287C00B53397 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E7574CD21C7B693300C4E626 /* collegeProfileBuilder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = collegeProfileBuilder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7574CD51C7B693300C4E626 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7574CD71C7B693300C4E626 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			children = (
 				E7574CD51C7B693300C4E626 /* AppDelegate.swift */,
 				E7574CD91C7B693300C4E626 /* Main.storyboard */,
+				E74521491CC5287C00B53397 /* MapViewController.swift */,
 				E737BA7C1C9C571D00B5AA30 /* webpageViewController.swift */,
 				E7574CD71C7B693300C4E626 /* ViewController.swift */,
 				E7C61B081C7CB26F0071A4EF /* DetailViewController.swift */,
@@ -274,6 +277,7 @@
 				E7C61B091C7CB26F0071A4EF /* DetailViewController.swift in Sources */,
 				E737BA7D1C9C571D00B5AA30 /* webpageViewController.swift in Sources */,
 				E7C61B0B1C7CB2810071A4EF /* College.swift in Sources */,
+				E745214A1CC5287C00B53397 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

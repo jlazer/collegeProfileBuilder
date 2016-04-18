@@ -141,6 +141,33 @@
             </objects>
             <point key="canvasLocation" x="2835" y="349"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="M4w-WC-jfh">
+            <objects>
+                <viewController id="Nad-jY-X7O" customClass="MapViewController" customModule="collegeProfileBuilder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nJl-gl-eCD"/>
+                        <viewControllerLayoutGuide type="bottom" id="0sU-4n-GNW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qEc-zI-NvA">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="RzT-2S-NOP">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <outlet property="myMapView" destination="RzT-2S-NOP" id="pGE-AR-t1O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y1r-Pv-Q8p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2001" y="-740"/>
+        </scene>
         <!--Detail View Controller-->
         <scene sceneID="kcX-26-uTm">
             <objects>
@@ -167,12 +194,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zzM-Yc-KaK">
-                                <rect key="frame" x="351" y="397" width="66" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number Of Students" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXL-HG-eoN">
                                 <rect key="frame" x="305" y="464" width="158" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -193,7 +214,8 @@
                                 <rect key="frame" x="357" y="531" width="56" height="30"/>
                                 <state key="normal" title="Website"/>
                                 <connections>
-                                    <segue destination="vt4-ju-nDe" kind="presentation" id="Wqz-jl-v8r"/>
+                                    <action selector="webpageViewWhenTapped:" destination="WAi-Rw-MYx" eventType="touchUpInside" id="1yU-3m-eqd"/>
+                                    <segue destination="vt4-ju-nDe" kind="presentation" identifier="webPageSegue" id="Wqz-jl-v8r"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ukY-8d-fW9">
@@ -209,6 +231,14 @@
                                 <state key="normal" title="Add Photo"/>
                                 <connections>
                                     <action selector="whenTappedPhotoLibrary:" destination="WAi-Rw-MYx" eventType="touchUpInside" id="gCu-Y5-B6t"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8rP-nY-iJ8">
+                                <rect key="frame" x="355" y="397" width="59" height="30"/>
+                                <state key="normal" title="Location"/>
+                                <connections>
+                                    <action selector="locationViewWhenTapped:" destination="WAi-Rw-MYx" eventType="touchUpInside" id="OtR-34-Mbe"/>
+                                    <segue destination="Nad-jY-X7O" kind="presentation" identifier="mapViewSegue" id="wm7-7k-eV8"/>
                                 </connections>
                             </button>
                         </subviews>

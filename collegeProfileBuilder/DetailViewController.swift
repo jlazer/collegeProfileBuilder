@@ -72,12 +72,26 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         self.picker.dismissViewControllerAnimated(true, completion: nil)
         
     }
+    
+    @IBAction func webpageViewWhenTapped(sender: UIButton) {
+        
+    }
+    
+    @IBAction func locationViewWhenTapped(sender: UIButton) {
+        
+    }
+    
+    
+    
+    
+    
+    
 
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let NVC = segue.destinationViewController as! webpageViewController
-        NVC.collegeInWebViewController = collegeDetailViewController
+        if segue.identifier ()
+        
     }
    
 }
