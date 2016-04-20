@@ -73,15 +73,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         
     }
     
-    @IBAction func webpageViewWhenTapped(sender: UIButton) {
-        
-    }
-    
-    @IBAction func locationViewWhenTapped(sender: UIButton) {
-        
-    }
-    
-    
+       
     
     
     
@@ -90,8 +82,22 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier ()
+        if segue.identifier == "webPageSegue"
+        {
+            let NVC = segue.destinationViewController as! webpageViewController
+            NVC.collegeInWebViewController = collegeDetailViewController
+        }
         
+
+        else
+        {
+            if segue.identifier == "mapViewwSegue"
+            {
+                
+            let NVC = segue.destinationViewController as! MapViewController
+            NVC.collegeInMapViewController = collegeDetailViewController
+        }
+            }
     }
-   
+
 }

@@ -214,7 +214,6 @@
                                 <rect key="frame" x="357" y="531" width="56" height="30"/>
                                 <state key="normal" title="Website"/>
                                 <connections>
-                                    <action selector="webpageViewWhenTapped:" destination="WAi-Rw-MYx" eventType="touchUpInside" id="1yU-3m-eqd"/>
                                     <segue destination="vt4-ju-nDe" kind="presentation" identifier="webPageSegue" id="Wqz-jl-v8r"/>
                                 </connections>
                             </button>
@@ -237,7 +236,6 @@
                                 <rect key="frame" x="355" y="397" width="59" height="30"/>
                                 <state key="normal" title="Location"/>
                                 <connections>
-                                    <action selector="locationViewWhenTapped:" destination="WAi-Rw-MYx" eventType="touchUpInside" id="OtR-34-Mbe"/>
                                     <segue destination="Nad-jY-X7O" kind="presentation" identifier="mapViewSegue" id="wm7-7k-eV8"/>
                                 </connections>
                             </button>
