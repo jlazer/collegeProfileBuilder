@@ -27,10 +27,10 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             for place in arrayOfPlacemarks1!
             {
                 let annotation = MKPointAnnotation()
-                annotation.coordinate = (place.location?.coordinate)
-                
+                annotation.coordinate = (place.location?.coordinate)!
+                annotation.title = place.name
+                self.myMapView.addAnnotation(annotation)
             }
-            
         }
         
         
