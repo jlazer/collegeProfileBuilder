@@ -156,6 +156,14 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="RzT-2S-NOP">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                             </mapView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nfb-0Q-B6z">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="01w-2r-Jcy">
+                                        <barButtonItem key="leftBarButtonItem" title="Dismiss" id="Qrx-ix-wDP"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -166,7 +174,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y1r-Pv-Q8p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2001" y="-740"/>
+            <point key="canvasLocation" x="2001" y="-735"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="kcX-26-uTm">

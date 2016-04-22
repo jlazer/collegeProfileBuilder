@@ -21,10 +21,11 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         myMapView.delegate = self
+        print(collegeInMapViewController.name)
+        let address = collegeInMapViewController.name
         
-        let address1 = "Cal Poly Pomona"
-        geoCoder1.geocodeAddressString(address1) { (arrayOfPlacemarks1, error1) -> Void in
-            for place in arrayOfPlacemarks1!
+        geoCoder1.geocodeAddressString(address) { (arrayOfPlacemarks, error) -> Void in
+            for place in arrayOfPlacemarks!
             {
                 let annotation = MKPointAnnotation()
                 annotation.coordinate = (place.location?.coordinate)!
