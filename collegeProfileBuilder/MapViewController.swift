@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 class MapViewController: UIViewController, MKMapViewDelegate {
-
+    
     @IBOutlet weak var myMapView: MKMapView!
     var collegeInMapViewController = College()
     var locationManager = CLLocationManager()
@@ -24,9 +24,12 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         print(collegeInMapViewController.name)
         let address = collegeInMapViewController.name
         
+        print(address)
+        
         geoCoder1.geocodeAddressString(address) { (arrayOfPlacemarks, error) -> Void in
             for place in arrayOfPlacemarks!
             {
+                
                 let annotation = MKPointAnnotation()
                 annotation.coordinate = (place.location?.coordinate)!
                 annotation.title = place.name
@@ -37,9 +40,24 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         
         
         
-
+        
+    }
+    
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        let pin = MKAnnotationView(annotation: annotation, reuseIdentifier:  nil)
+        pin.image = UIImage(named: "collegePin")
+        pin.canShowCallout = true
+        let button = UIButton(type: .DetailDisclosure)
+        pin.rightCalloutAccessoryView = button
+        return pin
     }
 
-
-   
+    
+    
+    
+    @IBAction func dismissOnTap(sender: UIBarButtonItem) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
 }

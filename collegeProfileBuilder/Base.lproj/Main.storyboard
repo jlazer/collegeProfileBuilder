@@ -160,7 +160,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                                 <items>
                                     <navigationItem title="Title" id="01w-2r-Jcy">
-                                        <barButtonItem key="leftBarButtonItem" title="Dismiss" id="Qrx-ix-wDP"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Dismiss" id="Qrx-ix-wDP">
+                                            <connections>
+                                                <action selector="dismissOnTap:" destination="Nad-jY-X7O" id="iaB-eQ-pAH"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>

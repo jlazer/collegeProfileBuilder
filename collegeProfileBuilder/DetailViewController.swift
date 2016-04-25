@@ -19,10 +19,10 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     @IBOutlet weak var websiteTextfield: UITextField!
     var picker = UIImagePickerController()
     var collegePhoto = UIImage()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         print(collegeDetailViewController.name)
         print(collegeDetailViewController.location)
         print(collegeDetailViewController.numberOfStudents)
@@ -38,13 +38,13 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         self.picker.allowsEditing = true
         
     }
-
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         let webpageConversion: NSURL = NSURL(string: websiteTextfield.text!)!
         collegeDetailViewController.webpage = webpageConversion
         return true
     }
-   
+    
     @IBAction func whenTappedPhotoLibrary(sender: UIButton) {
         let sheet = UIAlertController(title: "", message: "", preferredStyle: .ActionSheet)
         sheet.popoverPresentationController?.sourceView = self.view
@@ -52,8 +52,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         let libraryButton = UIAlertAction(title: "PHOTO LIBRARY", style: .Default) {(action) -> Void in
             self.picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
             self.presentViewController(self.picker, animated: true, completion: nil)
-        
-    }
+            
+        }
         sheet.addAction(libraryButton)
         self.presentViewController(sheet, animated: true, completion: nil)
     }
@@ -73,12 +73,12 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         
     }
     
-       
     
     
     
     
-
+    
+    
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -87,17 +87,15 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
             let NVC = segue.destinationViewController as! webpageViewController
             NVC.collegeInWebViewController = collegeDetailViewController
         }
-        
-
+            
+            
         else
         {
-            if segue.identifier == "mapViewwSegue"
-            {
                 
-            let NVC = segue.destinationViewController as! MapViewController
-            NVC.collegeInMapViewController = collegeDetailViewController
+                let NVC = segue.destinationViewController as! MapViewController
+                NVC.collegeInMapViewController = collegeDetailViewController
+        
         }
-            }
     }
-
+    
 }
