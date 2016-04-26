@@ -38,9 +38,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         }
         
         
-        
-        
-        
     }
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
@@ -58,7 +55,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         let region = MKCoordinateRegion(center: center, span: coordinateSpan)
         myMapView.setRegion(region, animated: true)
     }
-
+    
     
     
     
