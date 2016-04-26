@@ -51,6 +51,13 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         pin.rightCalloutAccessoryView = button
         return pin
     }
+    
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        let coordinateSpan = MKCoordinateSpan(latitudeDelta: 1.0, longitudeDelta: 1.0)
+        let center = view.annotation!.coordinate
+        let region = MKCoordinateRegion(center: center, span: coordinateSpan)
+        myMapView.setRegion(region, animated: true)
+    }
 
     
     
